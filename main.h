@@ -9,20 +9,21 @@
 typedef struct prt
 {
 	char *pr;
-	void print_func(va_list);
+	void (*f)(va_list);
+	void (*f2)(va_list, va_list);
 } prt_t;
 
 int _printf(const char *format, ...);
-void print_length(va_list ap);
-void print_neg(va_list ap);
-void print_uns(va_list ap);
-void print_uns_oct(va_list ap);
-void print_uns_hexa(va_list ap);
-void print_char(va_list ap);
-void print_string(va_list ap);
-void print_addr(va_list ap);
-void print_perc(va_list ap);
-void print_len(va_list ap);
-void print_unknown(va_list ap);
+void print_length(va_list len1, va_list len2);
+void print_neg(va_list neg);
+void print_uns(va_list uns);
+void print_uns_oct(va_list oct);
+void print_uns_hexa(va_list hex1, va_list hex2);
+void print_char(va_list c);
+void print_string(va_list s);
+void print_addr(va_list addr);
+void print_perc(va_list p);
+void print_len(va_list len);
+void print_unknown(va_list u);
 
 #endif
