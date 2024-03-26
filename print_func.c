@@ -8,41 +8,42 @@
 
 void print_int(va_list numb)
 {
-	if (numb < 0)
+	int n = va_arg(numb, int);
+
+	if (n < 0)
 	{
-		numb = numb * -1;
+		n = n * -1;
 		_putchar('-');
 	}
-	int n = va_arg(numb, int);
-	else if (n > 9999)
-        {
-                _putchar(n / 10000 + '0')
+
+	if (n > 9999)
+	{
+		_putchar(n / 10000 + '0');
 		_putchar((n / 1000) % 10 + '0');
 		_putchar((n / 100) % 10 + '0');
-                _putchar((n / 10) % 10 + '0');
-                _putchar(n % 10 + '0');
-        }
+		_putchar((n / 10) % 10 + '0');
+		_putchar(n % 10 + '0');
+	}
 	else if (n > 999)
-        {
+	{
 		_putchar((n / 1000) % 10 + '0');
 		_putchar((n / 100) % 10 + '0');
-                _putchar((n / 10) % 10 + '0');
-                _putchar(n % 10 + '0');
-        }
+		_putchar((n / 10) % 10 + '0');
+		_putchar(n % 10 + '0');
+	}
 	else if (n > 99)
-        {
-                _putchar(n / 100 + '0');
-                _putchar((n / 10) % 10 + '0');
-                _putchar(n % 10 + '0');
-        }
-        else if (n > 9)
-        {
-                _putchar(n / 10 + '0');
-                _putchar(n % 10 + '0');
-        }
-        else
-                _putchar(n + '0');
-	
+	{
+		_putchar(n / 100 + '0');
+		_putchar((n / 10) % 10 + '0');
+		_putchar(n % 10 + '0');
+	}
+	else if (n > 9)
+	{
+		_putchar(n / 10 + '0');
+		_putchar(n % 10 + '0');
+	}
+	else
+		_putchar(n + '0');
 }
 
 /**
@@ -53,7 +54,7 @@ void print_int(va_list numb)
 
 void print_char(va_list c)
 {
-        _putchar(va_arg(ap, int));
+	_putchar(va_arg(c, int));
 }
 
 /**
@@ -81,5 +82,7 @@ void print_string(va_list s)
 
 void print_perc(va_list p)
 {
-        _putchar('%');
+	char per = va_arg(p, int);
+
+	_putchar(per);
 }
