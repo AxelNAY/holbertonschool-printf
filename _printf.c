@@ -1,5 +1,4 @@
 #include "main.h"
-#include "print_func.c"
 
 /**
 * _printf - print everithing
@@ -43,6 +42,7 @@ int _printf(const char *format, ...)
 		}
 		else
 			_putchar(format[i]);
+		i++;
 	}
 	return (i);
 }
