@@ -13,11 +13,11 @@ int _printf(const char *format, ...)
 	int j = 0;
 
 	prt_t type[] = {
-	{"c", print_char},
-	{"s", print_string},
+	{'c', print_char},
+	{'s', print_string},
 	{'%', print_perc},
-	{"d", print_int},
-	{"i", print_int}
+	{'d', print_int},
+	{'i', print_int}
 	};
 
 	if (format == NULL)
