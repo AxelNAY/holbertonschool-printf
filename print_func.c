@@ -26,7 +26,7 @@ void print_int(va_list numb)
 	}
 	else if (n > 999)
 	{
-		_putchar((n / 1000) % 10 + '0');
+		_putchar(n / 1000 + '0');
 		_putchar((n / 100) % 10 + '0');
 		_putchar((n / 10) % 10 + '0');
 		_putchar(n % 10 + '0');
@@ -54,7 +54,7 @@ void print_int(va_list numb)
 
 void print_char(va_list c)
 {
-	_putchar(va_arg(c, int));
+	_putchar(va_arg(c, int) + '0');
 }
 
 /**
@@ -71,7 +71,7 @@ void print_string(va_list s)
 	str = va_arg(s, char*);
 
 	for (i = 0; str[i]; i++)
-		_putchar(str[i]);
+		_putchar(str[i] + '0');
 }
 
 /**
@@ -84,5 +84,5 @@ void print_perc(va_list p)
 {
 	char per = va_arg(p, int);
 
-	_putchar(per);
+	_putchar(per + '0');
 }

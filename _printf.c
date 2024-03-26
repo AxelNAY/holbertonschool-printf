@@ -1,5 +1,4 @@
 #include "main.h"
-#include "print_func.c"
 
 /**
 * _printf - print everithing
@@ -32,7 +31,7 @@ int _printf(const char *format, ...)
 				if (type[j].pr == format[i])
 				{
 					type[j].f(ap);
-					i = i + 2;
+					i++;
 				}
 			}
 		}
@@ -43,6 +42,7 @@ int _printf(const char *format, ...)
 		}
 		else
 			_putchar(format[i]);
+		i++;
 	}
 	return (i);
 }
