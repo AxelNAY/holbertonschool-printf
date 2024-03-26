@@ -1,53 +1,48 @@
 #include "main.h"
 
 /**
- * print_length - print the length
+ * print_int - print an integer
  *
- * @len: arguments to print
+ * @numb: integer
  */
 
-void print_length(va_list len)
+void print_int(va_list numb)
 {
-	int length = va_arg(len, int);
-	if (length > 99)
+	if (numb < 0)
 	{
-		_putchar(length / 100 + '0');
-		_putchar((length / 10) % 10 + '0');
-		_putchar(length % 10 + '0');
+		numb = numb * -1;
+		_putchar('-');
 	}
-	else if (length > 9)
-	{
-		_putchar(length / 10 + '0');
-		_putchar(length % 10 + '0');
-	}
-	else
-		_putchar(length + '0');
-	_putchar(',');
-	_putchar(' ');
-	if (length > 99)
-	{
-		_putchar(length / 100 + '0');
-		_putchar((length / 10) % 10 + '0');
-		_putchar(length % 10 + '0');
-	}
-	else if (len > 9)
-	{
-		_putchar(length / 10 + '0');
-		_putchar(length % 10 + '0');
-	}
-	else
-		_putchar(length + '0');
-}
-
-/**
- * print_neg - print a negative number
- *
- * @neg: arguments to print
- */
-
-void print_neg(va_list neg)
-{
-	printf("%d", va_arg(ap, double));
+	int n = va_arg(numb, int);
+	else if (n > 9999)
+        {
+                _putchar(n / 10000 + '0')
+		_putchar((n / 1000) % 10 + '0');
+		_putchar((n / 100) % 10 + '0');
+                _putchar((n / 10) % 10 + '0');
+                _putchar(n % 10 + '0');
+        }
+	else if (n > 999)
+        {
+		_putchar((n / 1000) % 10 + '0');
+		_putchar((n / 100) % 10 + '0');
+                _putchar((n / 10) % 10 + '0');
+                _putchar(n % 10 + '0');
+        }
+	else if (n > 99)
+        {
+                _putchar(n / 100 + '0');
+                _putchar((n / 10) % 10 + '0');
+                _putchar(n % 10 + '0');
+        }
+        else if (n > 9)
+        {
+                _putchar(n / 10 + '0');
+                _putchar(n % 10 + '0');
+        }
+        else
+                _putchar(n + '0');
+	
 }
 
 /**
@@ -69,16 +64,13 @@ void print_char(va_list c)
 
 void print_string(va_list s)
 {
+	int i;
 	char *str;
 
 	str = va_arg(s, char*);
 
-	if (str == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", str);
+	for (i = 0; str[i]; i++)
+		_putchar(str[i]);
 }
 
 /**
@@ -90,28 +82,4 @@ void print_string(va_list s)
 void print_perc(va_list p)
 {
         _putchar('%');
-}
-
-/**
- * print_len - print length
- *
- * @ap: arguments to prints
- */
-
-void print_len(va_list len)
-{
-	int length = va_arg(len, int);
-	if (length > 99)
-	{
-		_putchar(length / 100 + '0');
-		_putchar((length / 10) % 10 + '0');
-		_putchar(length % 10 + '0');
-	}
-	else if (length > 9)
-	{
-		_putchar(length / 10 + '0');
-		_putchar(length % 10 + '0');
-	}
-	else
-		_putchar(length + '0');
 }
