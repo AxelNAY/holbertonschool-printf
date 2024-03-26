@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 				if (type[j].pr == format[i])
 				{
 					type[j].f(ap);
-					i = i + 2;
+					i++;
 				}
 			}
 		}
