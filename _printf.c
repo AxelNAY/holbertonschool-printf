@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i, j, res = 0;
+	int i = 0, j, res = 0;
 
 	prt_t type[] = {
 		{'c', print_char},
@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(ap, format);
-	while (format[i])
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
@@ -39,7 +39,6 @@ int _printf(const char *format, ...)
 		{
 			_putchar('\n');
 			i++;
-			break;
 		}
 		else
 		{

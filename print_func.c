@@ -58,7 +58,7 @@ int print_int(va_list numb)
 int print_char(va_list c)
 {
 	_putchar(va_arg(c, int) + '0');
-	return (0);
+	return (1);
 }
 
 /**
@@ -89,5 +89,5 @@ int print_string(va_list s)
 int print_perc(void)
 {
 	_putchar('%');
-	return (0);
+	return (1);
 }
