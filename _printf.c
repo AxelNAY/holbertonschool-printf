@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	for (i = 0; format && format[i]; i++)
 	{
+		
 		if (format[i] == '%')
 		{
 			for (j = 0; type[j].pr; j++)
