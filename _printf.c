@@ -21,31 +21,31 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(ap, format);
-	for (i = 0;format && format[i]; i++)
+	for (i = 0; format && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
-				for (j = 0; type[j].pr; j++)
+			for (j = 0; type[j].pr; j++)
+			{
+				if (type[j].pr == format[i + 1])
 				{
-					if (type[j].pr == format[i+1])
-					{
-						res = res + type[j].f(ap) + 1;
-						i = i+2;
-						break;
-					}
+					res = res + type[j].f(ap) + 1;
+					i = i + 2;
+					break;
 				}
+			}
 		}
-		if (format[i] == '\\' && format[i+1] == 'n')
+		if (format[i] == '\\' && format[i + 1] == 'n')
 		{
 			_putchar('\n');
 			i++;
 			break;
-		}
-		else
-		{
-			_putchar(format[i]);
-		}
-		res++;
-		}
-		return (res);
+			}
+			else
+			{
+				_putchar(format[i]);
+			}
+			res++;
+	}
+	return (res);
 }
