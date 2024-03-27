@@ -10,8 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i = 0;
-	int j;
+	int i, j, res = 0;
 
 	prt_t type[] = {
 		{'c', print_char},
@@ -22,27 +21,31 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(ap, format);
-	while (format[i])
+	for (i = 0;format && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
-			for (j = 0; type[j].pr; j++)
-			{
-				if (type[j].pr == format[i])
+				for (j = 0; type[j].pr; j++)
 				{
-					type[j].f(ap);
-					i++;
+					if (type[j].pr == format[i+1])
+					{
+						res = res + type[j].f(ap) + 1;
+						i = i+2;
+						break;
+					}
 				}
-			}
 		}
-		else if (format[i] == '\\' && format[i++] == 'n')
+		if (format[i] == '\\' && format[i+1] == 'n')
 		{
 			_putchar('\n');
-			i = i + 2;
+			i++;
+			break;
 		}
 		else
+		{
 			_putchar(format[i]);
-		i++;
-	}
-	return (i);
+		}
+		res++;
+		}
+		return (res);
 }

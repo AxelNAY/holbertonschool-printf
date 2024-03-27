@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <limits.h>
+#include <string.h>
+#include <unistd.h>
 
 /**
  * prt - structure print.
@@ -15,19 +17,19 @@
 typedef struct prt
 {
 	char pr;
-	void (*f)(va_list);
+	int (*f)();
 } prt_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void print_int(va_list numb);
-void print_char(va_list c);
-void print_string(va_list s);
-void print_perc(va_list p);
-void print_uns(va_list uns);
-void print_uns_oct(va_list oct);
-void print_uns_hexa(va_list hex);
-void print_addr(va_list addr);
-void print_unknown(va_list u);
+int print_int(va_list ap);
+int print_char(va_list ap);
+int print_string(va_list ap);
+int print_perc(va_list ap __attribute__((unused)));
+int print_uns(va_list ap);
+int print_uns_oct(va_list ap);
+int print_uns_hexa(va_list ap);
+int print_addr(va_list ap);
+int print_unknown(va_list ap);
 
 #endif
