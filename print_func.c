@@ -6,10 +6,11 @@
  * @numb: integer
  */
 
-void print_int(va_list numb)
+int print_int(va_list numb)
 {
 	int n = va_arg(numb, int);
 
+	_putchar(va_arg(numb, int));
 	if (n < 0)
 	{
 		n = n * -1;
@@ -44,6 +45,8 @@ void print_int(va_list numb)
 	}
 	else
 		_putchar(n + '0');
+
+	return (0);
 }
 
 /**
@@ -52,9 +55,10 @@ void print_int(va_list numb)
  * @c: arguments to prints
  */
 
-void print_char(va_list c)
+int print_char(va_list c)
 {
 	_putchar(va_arg(c, int) + '0');
+	return (0);
 }
 
 /**
@@ -63,15 +67,17 @@ void print_char(va_list c)
  * @s: arguments to print
  */
 
-void print_string(va_list s)
+int print_string(va_list s)
 {
-	int i;
+	int i, len;
 	char *str;
 
 	str = va_arg(s, char*);
-
-	for (i = 0; str[i]; i++)
+	len = strlen(str);
+	for (i = 0; i < len; i++)
 		_putchar(str[i] + '0');
+
+	return (len);
 }
 
 /**
@@ -80,9 +86,8 @@ void print_string(va_list s)
  * @p: arguments to print
  */
 
-void print_perc(va_list p)
+int print_perc(void)
 {
-	char per = va_arg(p, int);
-
-	_putchar(per + '0');
+	_putchar('%');
+	return (0);
 }

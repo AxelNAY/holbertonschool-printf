@@ -10,8 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i = 0;
-	int j;
+	int i, j, res = 0;
 
 	prt_t type[] = {
 		{'c', print_char},
@@ -28,21 +27,26 @@ int _printf(const char *format, ...)
 		{
 			for (j = 0; type[j].pr; j++)
 			{
-				if (type[j].pr == format[i])
+				if (type[j].pr == format[i++])
 				{
-					type[j].f(ap);
+					res = res + type[j].f(ap);
 					i++;
+					break;
 				}
 			}
 		}
 		else if (format[i] == '\\' && format[i++] == 'n')
 		{
 			_putchar('\n');
-			i = i + 2;
+			i++;
+			break;
 		}
 		else
+		{
 			_putchar(format[i]);
+			res++;
+		}
 		i++;
 	}
-	return (i);
+	return (res);
 }
