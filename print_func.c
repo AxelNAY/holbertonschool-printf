@@ -2,13 +2,13 @@
 
 /**
  * print_int - print an integer
- *
- * @numb: integer
+ * @ap: integer
+ * Return: 0
  */
 
-int print_int(va_list numb)
+int print_int(va_list ap)
 {
-	int n = va_arg(numb, int);
+	int n = va_arg(ap, int);
 
 
 	if (n < 0)
@@ -52,8 +52,8 @@ int print_int(va_list numb)
 
 /**
  * print_char - print a char
- *
- * @c: arguments to prints
+ *@ap: list
+ * Return: 1
  */
 
 int print_char(va_list ap)
@@ -66,8 +66,8 @@ int print_char(va_list ap)
 
 /**
  * print_string  - print a string
- *
- * @s: arguments to print
+ * @ap: list for arguments to print
+ * Return: len
  */
 
 int print_string(va_list ap)
@@ -86,8 +86,8 @@ int print_string(va_list ap)
 
 /**
  * print_perc - print a percent symbol
- *
- * @p: arguments to print
+ * @ap: list for arguments to print
+ * Return: 0
  */
 
 int print_perc(va_list ap __attribute__((unused)))
