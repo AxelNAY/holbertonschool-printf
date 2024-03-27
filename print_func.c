@@ -59,7 +59,6 @@ int print_int(va_list ap)
 int print_char(va_list ap)
 {
 	char c = va_arg(ap, int);
-
 	_putchar(c);
 	return 1;
 }

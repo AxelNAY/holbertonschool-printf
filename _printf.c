@@ -17,13 +17,12 @@ int _printf(const char *format, ...)
 		{'s', print_string},
 		{'%', print_perc},
 		{'d', print_int},
-		{'i', print_int}
+		{'i', print_int},
 	};
 
 	va_start(ap, format);
 	for (i = 0; format && format[i]; i++)
 	{
-		
 		if (format[i] == '%')
 		{
 			for (j = 0; type[j].pr; j++)
