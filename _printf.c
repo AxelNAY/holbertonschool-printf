@@ -25,6 +25,11 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i] == 'c')
+			{
+				char c = va_arg(ap, int);
+				_putchar(c);
+			}
 			for (j = 0; type[j].pr; j++)
 			{
 				if (type[j].pr == format[i + 1])
