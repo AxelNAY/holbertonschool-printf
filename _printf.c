@@ -25,12 +25,11 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i] == 'c')
+			if (format[i + 1] == 'c')
 			{
 				char c = va_arg(ap, int);
 				_putchar(c);
 				res++;
-				i++;
 			}
 			for (j = 0; type[j].pr; j++)
 			{
