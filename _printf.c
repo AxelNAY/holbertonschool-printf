@@ -29,7 +29,6 @@ int _printf(const char *format, ...)
 			{
 				char c = va_arg(ap, int);
 				_putchar(c);
-				res++;
 			}
 			for (j = 0; type[j].pr; j++)
 			{
