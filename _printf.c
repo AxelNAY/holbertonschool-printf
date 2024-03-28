@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			{
 				if (type[j].pr == format[i + 1])
 				{
-					res = res + type[j].f(ap) + 1;
+					res = res + type[j].f(ap);
 					i = i + 2;
 					break;
 				}
@@ -47,5 +47,7 @@ int _printf(const char *format, ...)
 			res++;
 		}
 	}
+	va_end(ap);
+
 	return (res);
 }
