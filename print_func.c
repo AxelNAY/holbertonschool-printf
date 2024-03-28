@@ -9,7 +9,7 @@
 int print_int(va_list ap)
 {
 	int i;
-	char buffer[11], *str;
+	char buffer[13], *str;
 
 	str = itoa(va_arg(ap, int), buffer, 10);
 	for (i = 0; str[i]; i++)
