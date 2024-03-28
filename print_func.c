@@ -74,6 +74,10 @@ int print_string(va_list ap)
 	char *str;
 
 	str = va_arg(ap, char*);
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
 	len = strlen(str);
 	for (i = 0; i < len; i++)
 	{
