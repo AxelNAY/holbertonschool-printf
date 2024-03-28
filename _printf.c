@@ -18,17 +18,17 @@ int _printf(const char *format, ...)
 		{'%', print_perc},
 		{'d', print_int},
 		{'i', print_int},
-		{'\0', NULL}
+		{'0', NULL}
 	};
 
 	va_start(ap, format);
-	if (format != 'k' && format != '!' || format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
 	}
 	for (i = 0; format && format[i]; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != 'k' && format[i + 1] != '!')
 		{
 			i++;
 			for (j = 0; type[j].pr; j++)
@@ -47,6 +47,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(ap);
-
 	return (res);
 }
