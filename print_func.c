@@ -9,8 +9,8 @@
 int print_int(va_list ap)
 {
 	int i;
-	char *buffer, *str;
-	str = itao(va_arg(ap, int), buffer, 10);
+	char buffer[8], *str;
+	str = itoa(va_arg(ap, int), buffer, 10);
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 

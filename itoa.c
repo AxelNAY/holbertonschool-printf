@@ -1,14 +1,30 @@
+#include "main.h"
+
+/**
+ * itoa - convert an integer to a string
+ * @value: integer.
+ * @buffer: string.
+ * @base: base.
+ * Return: the string.
+ */
+
 char* itoa(int value, char* buffer, int base)
 {
+	int n;
+	int i = 0, j, r, len;
+	char c;
+	
 	if (base < 2 || base > 32)
 		return buffer;
 
-	int n = abs(value);
-	int i = 0;
-	
+	if (value < 0)
+		n = value * -1;
+	else
+		n = value;
+
 	while (n)
 	{
-		int r = n % base;
+		r = n % base;
 
 		if (r >= 10)
 			buffer[i++] = 65 + (r - 10);
@@ -23,5 +39,14 @@ char* itoa(int value, char* buffer, int base)
 		buffer[i++] = '-';
 	buffer[i] = '\0';
 
-	return reverse(buffer, 0, i - 1);
+	len = i;
+
+	for (i = 0, j = len - 1; i <= j; i++, j--)
+	{
+		c = buffer[i];
+		buffer[i] = buffer[j];
+		buffer[j] = c;
+	}
+
+	return (buffer);
 }
