@@ -60,11 +60,11 @@ int print_string(va_list ap)
 /**
  * print_perc - print a percent symbol
  * @ap: list for arguments to print
- * Return: 0
+ * Return: 1
  */
 
 int print_perc(va_list ap __attribute__((unused)))
 {
 	_putchar('%');
-	return (0);
+	return (1);
 }
