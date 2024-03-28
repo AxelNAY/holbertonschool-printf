@@ -1,0 +1,82 @@
+MAN(_printf)			General Commands Manuel			MAN(_printf)
+
+
+NAME
+	_printf.c - Print anything.
+
+
+LIBRARY
+	Standard C library (libc, -lc)
+
+
+SYNOPSIS
+	int _printf(const char *format, ...);
+
+
+DESCRIPTION
+	_printf.c is a C Program used for print anything passed in parameter from main.c.
+
+
+OPTIONS
+	TEXT
+		Display the text passed in parameter.
+
+
+	%c, c=CHARACTER
+		Diplay a character contain in a variable passed in parameter.
+
+
+	%s, s=STRING
+		Display a string contain in a variable passed in parameter.
+
+
+	%%, %=SYMBOL %
+		Diplay the symbol % passed in parameter.
+
+
+	%d, d=SIGNED DECIMAL INTEGER
+		Display a signed decimal integer contain in a variable passed in parameter.
+
+
+	%i, i=INTEGER
+		Display an integer contain in a variable passed in parameter.
+
+
+RETURN VALUE
+	Length of the text passed in the function.
+
+
+PARAMETERS
+	format:
+		Text passed in the function. It can contain one of the option explaned.
+
+	...:
+		Variable(s) passed if one or more of the option is present in format.
+
+
+EXAMPLES
+	Display a Text:
+		_printf("Hello World!")
+
+	Display the character H contain in c:
+		_printf("%c", c)
+
+	Display the string 'I am a string' contain in s:
+		_printf("%s", s)
+
+	Display the symbol %:
+		_printf("%%")
+
+	Display the integer 7 contain in d:
+		_printf("%d", d)
+
+	Display the signed decimal integer 10 contain in i:
+		_printf("%i", i)
+
+
+SEE ALSO
+	For more information, visit: https://www.geeksforgeeks.org/printf-in-c/
+
+
+AUTHOR
+	Written by Axel NAY

@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 		{'s', print_string},
 		{'%', print_perc},
 		{'d', print_int},
-		{'i', print_int}
+		{'i', print_int},
 	};
 
 	va_start(ap, format);
@@ -25,15 +25,15 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-				for (j = 0; type[j].pr; j++)
+			for (j = 0; type[j].pr; j++)
+			{
+				if (type[j].pr == format[i + 1])
 				{
-					if (type[j].pr == format[i + 1])
-					{
-						res = res + type[j].f(ap) + 1;
-						i = i + 2;
-						break;
-					}
+					res = res + type[j].f(ap) + 1;
+					i = i + 2;
+					break;
 				}
+			}
 		}
 		if (format[i] == '\\' && format[i + 1] == 'n')
 		{

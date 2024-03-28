@@ -9,7 +9,7 @@
 #include <limits.h>
 
 /**
- * prt - structure print.
+ * struct prt - structure print.
  * @pr: character to analyse.
  * @f: function to call.
  */
