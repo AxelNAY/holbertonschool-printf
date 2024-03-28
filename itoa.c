@@ -8,14 +8,14 @@
  * Return: the string.
  */
 
-char* itoa(int value, char* buffer, int base)
+char *itoa(int value, char *buffer, int base)
 {
 	int n;
 	int i = 0, j, r, len;
 	char c;
-	
+
 	if (base < 2 || base > 32)
-		return buffer;
+		return (buffer);
 
 	if (value < 0)
 		n = value * -1;

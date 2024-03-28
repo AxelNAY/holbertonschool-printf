@@ -26,7 +26,7 @@ int print_int(va_list ap);
 int print_char(va_list ap);
 int print_string(va_list ap);
 int print_perc(va_list ap __attribute__((unused)));
-char* itoa(int value, char* buffer, int base);
+char *itoa(int value, char *buffer, int base);
 int print_uns(va_list ap);
 int print_uns_oct(va_list ap);
 int print_uns_hexa(va_list ap);

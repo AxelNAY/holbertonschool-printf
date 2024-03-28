@@ -10,6 +10,7 @@ int print_int(va_list ap)
 {
 	int i;
 	char buffer[8], *str;
+
 	str = itoa(va_arg(ap, int), buffer, 10);
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
@@ -26,6 +27,7 @@ int print_int(va_list ap)
 int print_char(va_list ap)
 {
 	char c = va_arg(ap, int);
+
 	_putchar(c);
 	return (1);
 }
@@ -42,7 +44,12 @@ int print_string(va_list ap)
 	char *str;
 
 	str = va_arg(ap, char*);
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
 	len = strlen(str);
+
 	for (i = 0; i < len; i++)
 	{
 		_putchar(str[i]);
