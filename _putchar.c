@@ -2,8 +2,8 @@
 #include "main.h"
 
 /**
-* main - Prints _putchar.
-*
+* _putchar - Prints _putchar.
+* @c: character 
 * Return: Always the value.
 */
 
