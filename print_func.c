@@ -8,32 +8,13 @@
 
 int print_int(va_list ap)
 {
-	int i = 0;
-	int n = va_arg(ap, int);
-	char *str;
-
-	if (n < 0)
-		_putchar('-');
-	while (n)
-	{
-		int r = n % 10;
-
-		if (r >= 10)
-		{
-			str[i++] = 65 + (r - 10);
-		}
-		else
-		{
-			str[i++] = 48 + r;
-		}
-		n = n / 10;
-	}
-
-	while (str[i])
-	{
+	int i;
+	char *buffer, *str;
+	str = itao(va_arg(ap, int), buffer, 10);
+	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
-		i++;
-	}
+
+	return (0);
 }
 
 /**
