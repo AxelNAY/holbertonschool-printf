@@ -15,7 +15,7 @@ int print_int(va_list ap)
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 
-	return (0);
+	return (1);
 }
 
 /**
