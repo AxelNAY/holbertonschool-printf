@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 	}
 	for (i = 0; format && format[i]; i++)
 	{
-		if (format[i] == '%' && format[i + 1] != 'k' && format[i + 1] != '!')
+		if (format[i] == '%' && format[i + 1] != 'K' && format[i + 1] != '!')
 		{
 			i++;
 			for (j = 0; type[j].pr; j++)
