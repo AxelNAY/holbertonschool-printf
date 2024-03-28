@@ -47,5 +47,7 @@ int _printf(const char *format, ...)
 			res++;
 		}
 	}
+	va_end(ap);
+
 	return (res);
 }
