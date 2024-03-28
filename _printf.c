@@ -25,21 +25,15 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			i++;
 			for (j = 0; type[j].pr; j++)
 			{
-				if (type[j].pr == format[i + 1])
+				if (type[j].pr == format[i])
 				{
 					res = res + type[j].f(ap);
-					i = i + 2;
 					break;
 				}
 			}
-		}
-		if (format[i] == '\\' && format[i + 1] == 'n')
-		{
-			_putchar('\n');
-			i++;
-			break;
 		}
 		else
 		{
