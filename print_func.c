@@ -95,5 +95,5 @@ int print_string(va_list ap)
 int print_perc(va_list ap __attribute__((unused)))
 {
 	_putchar('%');
-	return (0);
+	return (1);
 }
