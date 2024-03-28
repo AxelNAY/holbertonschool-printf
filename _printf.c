@@ -18,9 +18,14 @@ int _printf(const char *format, ...)
 		{'%', print_perc},
 		{'d', print_int},
 		{'i', print_int},
+		{'\0', NULL}
 	};
 
 	va_start(ap, format);
+	if (format != 'k' && format != '!' || format == NULL)
+	{
+		return (-1);
+	}
 	for (i = 0; format && format[i]; i++)
 	{
 		if (format[i] == '%')

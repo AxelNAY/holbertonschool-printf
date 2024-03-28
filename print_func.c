@@ -58,6 +58,7 @@ int print_int(va_list ap)
 int print_char(va_list ap)
 {
 	char c = va_arg(ap, int);
+
 	_putchar(c);
 	return (1);
 }
@@ -89,7 +90,7 @@ int print_string(va_list ap)
 /**
  * print_perc - print a percent symbol
  * @ap: list for arguments to print
- * Return: 0
+ * Return: 1
  */
 
 int print_perc(va_list ap __attribute__((unused)))
