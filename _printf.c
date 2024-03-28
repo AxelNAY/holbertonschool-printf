@@ -21,10 +21,6 @@ int _printf(const char *format, ...)
 		{'0', NULL}
 	};
 	va_start(ap, format);
-<<<<<<< HEAD
-
-=======
->>>>>>> 2bc5582fb06d649626ca639a128be1a973a173d0
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
