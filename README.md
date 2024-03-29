@@ -22,23 +22,24 @@ For the moment, we only succefully have 5 format specifiers take into account bu
 
 ## Files Create
 
-* [_printf.c](https://github.com/AxelNAY/holbertonschool-printf/blob/main/_printf.c) | C Program used for display anything.
-
-* [print_func.c](https://github.com/AxelNAY/holbertonschool-printf/blob/main/print_func.c) | Contain all the function permitting display the data in variable by format specifiers.
-
-* [itoa.c](https://github.com/AxelNAY/holbertonschool-printf/blob/main/itoa.c) | Convert an integer to a string.
-
-* [_putchar.c](https://github.com/AxelNAY/holbertonschool-printf/blob/main/_putchar.c) | Contain the function putchar.
+File Name | Description
+--- | ---
+[_printf.c](https://github.com/AxelNAY/holbertonschool-printf/blob/main/_printf.c) | C Program used for display anything
+[print_func.c](https://github.com/AxelNAY/holbertonschool-printf/blob/main/print_func.c) | Contain all the function permitting display the data in variable by format specifiers
+[itoa.c](https://github.com/AxelNAY/holbertonschool-printf/blob/main/itoa.c) | Convert an integer to a string
+[_putchar.c](https://github.com/AxelNAY/holbertonschool-printf/blob/main/_putchar.c) | Contain the function putchar.
+[main.c](https://github.com/AxelNAY/holbertonschool-printf/blob/Axel/main.c) | Call the function printf with something to print
+[main.h](https://github.com/AxelNAY/holbertonschool-printf/blob/Axel/main.h) | Contain all the differents prototypes, libraries and structure used
+[man_3_printf](https://github.com/AxelNAY/holbertonschool-printf/blob/Axel/man_3_printf) | Man page for _printf
 
 ## Format Specifiers
 
-* print_char | %c | Print a character
-
-* print_string | %s | Print a string
-
-* print_perc | %% | Print the symbol %
-
-* print_int | %d and %i | Print a signed decimal integer or an integer
+Function | Format Specifiers | Description
+--- | --- | ---
+print_char | %c | Print a character
+print_string | %s | Print a string
+print_perc | %% | Print the symbol %
+print_int | %d and %i | Print a signed decimal integer or an integer
 
 ## Execution
 
