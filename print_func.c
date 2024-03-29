@@ -8,9 +8,14 @@
 
 int print_int(va_list ap)
 {
+<<<<<<< HEAD
 	int i, value = ap;
 	int res = va_arg(value, int);
 	char buffer[11], *str;
+=======
+	int i;
+	char buffer[22], *str;
+>>>>>>> 3776b20908800f42724142d0ccdca3a676495b2b
 
 	str = itoa(res, buffer, 10);
 	for (i = 0; str[i]; i++)
