@@ -9,11 +9,11 @@
 int print_int(va_list ap)
 {
 	int i;
-	char buffer[22], *str;
+	char buffer[22];
 
-	str = itoa(va_arg(ap, int), buffer, 10);
-	for (i = 0; str[i]; i++)
-		_putchar(str[i]);
+	str = itoa(va_arg(ap, int));
+	for (i = 0; buffer[i]; i++)
+		_putchar(buffer[i]);
 
 	return (i);
 }
