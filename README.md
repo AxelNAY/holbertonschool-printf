@@ -10,7 +10,8 @@ For the moment, we only succefully have 5 format specifiers take into account bu
 
 ## Prototype
 
-'''int _printf(const char *format, ...)'''
+'''bash
+int _printf(const char *format, ...)'''
 
 * _printf - Display anything.
 
@@ -34,7 +35,8 @@ For the moment, we only succefully have 5 format specifiers take into account bu
 
 ### main.c
 
-'''#include <limits.h>
+'''bash
+#include <limits.h>
 #include <stdio.h>
 #include "main.h"
 
@@ -81,7 +83,8 @@ int main(void)
 
 * gcc : When we use gcc to compile, it analyzes our code, translates it into machine language and creates an executable file.
 
-'gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c'
+'''bash
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c'''
 
 Automatically create the file a.out for compile.
 
