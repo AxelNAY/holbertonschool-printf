@@ -30,6 +30,16 @@ For the moment, we only succefully have 5 format specifiers take into account bu
 
 * [_putchar.c](https://github.com/AxelNAY/holbertonschool-printf/blob/main/_putchar.c) | Contain the function putchar.
 
+## Format Specifiers
+
+* print_char | %c | Print a character
+
+* print_string | %s | Print a string
+
+* print_perc | %% | Print the symbol %
+
+* print_int | %d and %i | Print a signed decimal integer or an integer
+
 ## Execution
 
 ### main.c
