@@ -20,7 +20,7 @@ char *itoa(int value, char *buffer, int base)
 	if (value < 0)
 		n = value * -1;
 	else
-		n = - value;
+		n = value;
 
 	while (n)
 	{
