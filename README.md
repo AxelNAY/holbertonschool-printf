@@ -10,9 +10,7 @@ For the moment, we only succefully have 5 format specifiers take into account bu
 
 ## Prototype
 
-'''bash
-int _printf(const char *format, ...)
-'''
+`int _printf(const char *format, ...)`
 
 * _printf - Display anything.
 
@@ -36,7 +34,7 @@ int _printf(const char *format, ...)
 
 ### main.c
 
-'''bash
+```
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
@@ -79,45 +77,47 @@ int main(void)
 	printf("Unknown:[%r]\n");
 	return (0);
 }
-'''
+```
 
 ### Compilation
 
 * gcc : When we use gcc to compile, it analyzes our code, translates it into machine language and creates an executable file.
 
-'''bash
+```
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
-'''
+```
 
 Automatically create the file a.out for compile.
 
 ### Output
 
-'$ ./a.out'
-'Let's try to printf a simple sentence.'
-'Let's try to printf a simple sentence.'
-'Length:[39, 39]'
-'Length:[39, 39]'
-'Negative:[-762534]'
-'Negative:[-762534]'
-'Unsigned:[2147484671]'
-'Unsigned:[2147484671]'
-'Unsigned octal:[20000001777]'
-'Unsigned octal:[20000001777]'
-'Unsigned hexadecimal:[800003ff, 800003FF]'
-'Unsigned hexadecimal:[800003ff, 800003FF]'
-'Character:[H]'
-'Character:[H]'
-'String:[I am a string !]'
-'String:[I am a string !]'
-'Address:[0x7ffe637541f0]'
-'Address:[0x7ffe637541f0]'
-'Percent:[%]'
-'Percent:[%]'
-'Len:[12]'
-'Len:[12]'
-'Unknown:[%r]'
-'Unknown:[%r]'
+```
+$ ./a.out
+Let's try to printf a simple sentence.
+Let's try to printf a simple sentence.
+Length:[39, 39]
+Length:[39, 39]
+Negative:[-762534]
+Negative:[-762534]
+Unsigned:[2147484671]
+Unsigned:[2147484671]
+Unsigned octal:[20000001777]
+Unsigned octal:[20000001777]
+Unsigned hexadecimal:[800003ff, 800003FF]
+Unsigned hexadecimal:[800003ff, 800003FF]
+Character:[H]
+Character:[H]
+String:[I am a string !]
+String:[I am a string !]
+Address:[0x7ffe637541f0]
+Address:[0x7ffe637541f0]
+Percent:[%]
+Percent:[%]
+Len:[12]
+Len:[12]
+Unknown:[%r]
+Unknown:[%r]
+```
 
 ## About
 
