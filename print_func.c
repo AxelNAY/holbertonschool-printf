@@ -9,8 +9,7 @@
 int print_int(va_list ap)
 {
 	int i;
-	va_list value = ap;
-	int res = va_arg(value, int);
+	int res = va_arg(ap, int);
 	char buffer[11], *str;
 
 	str = itoa(res, buffer, 10);
