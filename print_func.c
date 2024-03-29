@@ -8,7 +8,8 @@
 
 int print_int(va_list ap)
 {
-	int i, value = ap;
+	int i
+	va_list value = ap;
 	int res = va_arg(value, int);
 	char buffer[11], *str;
 
