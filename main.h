@@ -8,10 +8,6 @@
 #include <stdarg.h>
 #include <limits.h>
 
-#ifndef INT_MIN
-#define INT_MIN (-2147483647 - 1)
-#endif
-
 /**
  * struct prt - structure print.
  * @pr: character to analyse.
@@ -30,7 +26,7 @@ int print_int(va_list ap);
 int print_char(va_list ap);
 int print_string(va_list ap);
 int print_perc(va_list ap __attribute__((unused)));
-char *itoa(int value, char *buffer, int base);
+void recur(int a);
 int print_uns(va_list ap);
 int print_uns_oct(va_list ap);
 int print_uns_hexa(va_list ap);

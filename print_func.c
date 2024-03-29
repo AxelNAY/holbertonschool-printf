@@ -1,6 +1,23 @@
 #include "main.h"
 
 /**
+ * d_recur - prints integer
+ * @a: integer to print
+*/
+
+void recur(int a)
+{
+	unsigned int b;
+
+	b = a;
+	if (b / 10)
+	{
+		recur(b / 10);
+	}
+	_putchar(b % 10 + '0');
+}
+
+/**
  * print_int - print an integer
  * @ap: integer
  * Return: i
@@ -8,13 +25,24 @@
 
 int print_int(va_list ap)
 {
-	int i;
-	char buffer[11], *str;
+	int i = 1, cp = 0;
+	unsigned int n;
 
-	str = itoa(va_arg(ap, int), buffer, 10);
-	for (i = 0; i < str[i]; i++)
-		_putchar(str[i]);
+	n = va_arg(ap, int);
+	cp = n;
+	if (cp < 0)
+	{
+		_putchar('-');
+		cp = cp * -1;
+		n = cp;
+		i++;
+	}
 
+	for (; n > 9; n /= 10)
+	{
+		i++;
+	}
+	recur(cp);
 	return (i);
 }
 
