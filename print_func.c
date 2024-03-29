@@ -8,10 +8,10 @@
 
 int print_int(va_list ap)
 {
-	int i;
+	int i, value = va_arg(ap, int);
 	char buffer[8], *str;
 
-	str = itoa(va_arg(ap, int), buffer, 10);
+	str = itoa(value, buffer, 10);
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 
