@@ -1,10 +1,4 @@
 #include "main.h"
-#include <limits.h>
-
-#ifndef INT_MIN
-#define INT_MIN (-2147483647 - 1)
-#endif
-
 
 /**
  * print_int - print an integer
