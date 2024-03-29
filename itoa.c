@@ -27,7 +27,7 @@ char *itoa(int value, char *buffer, int base)
 		r = n % base;
 
 		if (r >= 10)
-			buffer[i++] = ( r > 65) ? (r - 10) + 'a' : r + '0';
+			buffer[i++] = 65 + (r - 10);
 		else
 			buffer[i++] = 48 + r;
 		n = n / base;
