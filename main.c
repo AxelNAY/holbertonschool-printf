@@ -2,6 +2,10 @@
 #include <stdio.h>
 #include "main.h"
 
+#ifndef INT_MIN
+#define INT_MIN (-2147483647 - 1)
+#endif
+
 /**
  * main - Entry point
  *
