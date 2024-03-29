@@ -34,8 +34,6 @@ int _printf(const char *format, ...)
 			{
 				if (type[j].pr == format[i])
 				{
-					if (j == 3 || j == 4)
-						value == ap;
 					res = res + type[j].f(ap);
 					break;
 				}
