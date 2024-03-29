@@ -12,7 +12,7 @@ int print_int(va_list ap)
 	char buffer[22], *str;
 
 	str = itoa(va_arg(ap, int), buffer, 10);
-	for (i = 0; i < str[i]; i++)
+	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 
 	return (i);
